@@ -18,9 +18,10 @@ def download_gambar(url=None):
     logging.warning(content_type)
     if (content_type in list(tipe.keys())):
         namafile = os.path.basename(url)
-        ekstensi = tipe[content_type]
-        logging.warning(f"writing {namafile}.{ekstensi}")
-        fp = open(f"{namafile}.{ekstensi}","wb")
+        # jika path.basename nya sudah mengandung ekstensi, maka tidak perlu menambahkan ekstensi lagi
+        # ekstensi = tipe[content_type]
+        logging.warning(f"writing {namafile}")
+        fp = open(f"{namafile}","wb")
         fp.write(ff.content)
         fp.close()
     else:
