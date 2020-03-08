@@ -35,7 +35,8 @@ if __name__=='__main__':
                 'https://asset.kompas.com/crops/bJGiSwEVMWMUiX2HRT99U6f7Wvc=/0x0:0x0/740x500/data/photo/2020/03/02/5e5cfb501f54a.jpg',
                 'https://asset.kompas.com/crops/8q0sAyP-VaLrzoR7ZMZ7ZluoNiw=/168x0:1844x1117/740x500/data/photo/2020/03/02/5e5cd7a2ad3c6.jpg']
     threads = []
-    for i in range(3):
+    
+    for i in range(len(list_url)):
         t = threading.Thread(target=download_gambar(list_url[i]), args=(i,))
         threads.append(t)
 
