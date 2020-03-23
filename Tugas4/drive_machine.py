@@ -12,27 +12,35 @@ FITUR
   request : upload
   parameter : nama spasi link
   response : berhasil -> "Upload Completed"
-             gagal -> "ERROR"
+             gagal -> "ERROR"           
+  contoh : upload github http://github.com/fluidicon.png
+  
 - list : untuk melihat daftar file
   request: list
   parameter: tidak ada
   response: daftar record file yang ada
+  contoh : list
+  
 - download : untuk mencari file berdasar nama dan mengunduhnya ke lokal
   request: download 
   parameter: nama file yang dicari
   response: file ditemukan -> download -> "Download Completed"
             file tidak ditemukan -> "ERROR"
+  contoh : download github.png
+  
 - exit : untuk keluar dari program
   request : exit
   parameter : tidak ada
-  response : client memutuskan hubungan dengan server
+  response : disconnect ke server
+  contoh : exit
+  
 - jika command tidak dikenali akan merespon dengan ERRCMD
 '''
+
 d = Drive()
 
 class DriveMachine:
     def proses(self, string_to_process):
-        global list
         s = string_to_process
         cstring = s.split(" ")
         try:
@@ -47,7 +55,7 @@ class DriveMachine:
                 tipe['image/jpg'] = 'jpg'
                 tipe['image/jpeg'] = 'jpg'
                 content_type = ff.headers['Content-Type']
-                if (content_type in list(tipe.keys())):
+                if (content_type in tipe.keys()):
                     ekstensi = tipe[content_type]
                     namafile = nama + "." + ekstensi
                     logging.warning(f"uploading {namafile} to server")
@@ -74,7 +82,7 @@ class DriveMachine:
                 else:
                     return "Cannot find " + nama + " in database_server"
 
-                logging.warning("downloading" + nama)
+                logging.warning("downloading " + nama)
                 return "Download Completed"
             elif (command == 'list'):
                 hasil = d.list_data()
