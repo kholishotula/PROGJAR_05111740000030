@@ -25,20 +25,28 @@ Sebelum melakukan percakapan dan dapat menggunakan fitur-fitur lainnya, user dim
 
 #### Parameter Input
 Untuk log in user, gunakan command <code>auth</code> dan masukkan username serta password user. Sebagai contoh adalah sebagai berikut :<br>
-<code>auth {username} {password}</code><br>
+```
+auth {username} {password}
+```
 Command : auth<br>
 Parameter : username (spasi) password<br>
 Command tersebut kemudian dikirim ke server untuk diproses.<br><br>
 
 #### Hasil Keluaran, Penjelasan, Status Keluaran
 Jika autentikasi berhasil, maka akan muncul pesan bahwa user sudah logged in dan token id-nya. Sebagai contoh adalah sebagai berikut :<br>
-<code>status : OK, tokenid : {tokenID}<br>
-username {username} logged in, token {tokenid}</code><br>
+```
+status : OK, tokenid : {tokenID}
+username {username} logged in, token {tokenid}
+```
 Jika autentikasi gagal, maka akan muncul pesan error dan alasan error-nya. Sebagai contoh adalah sebagai berikut :<br>
-<code>status : ERROR, message : User is not found<br>
-Error, User is not found</code><br>
-<code> status : ERROR, message : Wrong password<br>
-Error, Wrong password</code><br>
+```
+status : ERROR, message : User is not found
+Error, User is not found
+```
+```
+status : ERROR, message : Wrong password<br>
+Error, Wrong password
+```
 
 #### Contoh Message Input dan Keluaran
 Jika berhasil<br>
@@ -57,6 +65,7 @@ client side<br>
 server side<br>
 <img src="img/server_login_error_password.PNG" style="float: left;"/><br>
 
+
 ### Mengirim Pesan
 Pre-conditions :
 -	Sudah log in
@@ -67,18 +76,24 @@ User dapat mengirim pesan ke user lain berupa teks.
 
 #### Parameter Input
 Untuk mengirim pesan, gunakan command <code>send</code> dan masukkan username tujuan serta pesannya. Sebagai contoh adalah sebagai berikut :<br>
-<code>send {username} {message}</code><br>
+```
+send {username} {message}
+```
 Command : send<br>
 Parameter : username_tujuan (spasi) pesan<br>
 Command tersebut kemudian diproses dan dikirim ke server dengan parameter token ID, username pengirim, username tujuan, dan pesan.<br><br>
 
 #### Hasil Keluaran, Penjelasan, Status Keluaran
 Jika pesan berhasil terkirim, maka akan muncul pesan bahwa pesan terkirim. Sebagai contoh adalah sebagai berikut :<br>
-<code> status : OK, message : Message sent<br>
-message sent to {username}</code><br>
+```
+status : OK, message : Message sent<br>
+message sent to {username}
+```
 Jika pesan gagal terkirim, maka akan muncul pesan error dan alasan error-nya. Sebagai contoh adalah sebagai berikut :<br>
-<code> status : ERROR, message : User is not found<br>
-Error, User is not found</code><br>
+```
+status : ERROR, message : User is not found<br>
+Error, User is not found
+```
 
 #### Contoh Message Input dan Keluaran
 Jika berhasil<br>
@@ -92,6 +107,7 @@ client side<br>
 server side<br>
 <img src="img/server_send_error_user.PNG" style="float: left;"/><br>
 
+
 ### Melihat Inbox
 Pre-conditions :
 -	Sudah log in
@@ -101,15 +117,19 @@ User dapat melihat kotak masuk dari pesan-pesan yang dikirimkan user lain kepada
 
 #### Parameter Input
 Untuk melihat inbox, gunakan command <code>inbox</code>. Sebagai contoh adalah sebagai berikut :<br>
-<code>inbox</code><br>
+```
+inbox
+```
 Command : inbox
 Parameter : (tidak ada)
 Command tersebut kemudian diproses dan dikirim ke server dengan parameter tokenID.<br><br>
 
 #### Hasil Keluaran, Penjelasan, Status Keluaran
 Jika terdapat pesan yang diterima dari orang lain, maka akan muncul pesan-pesannya. Sebagai contoh adalah sebagai berikut :<br>
-<code> status : OK, message : {json messages}<br>
-{"{username_sender}": [{"msg_from": {name_sender}, "msg_to": {name_receiver}, "msg": {message}}]}</code><br>
+```
+status : OK, message : {"{username_sender}": [{"msg_from": {name_sender}, "msg_to": {name_receiver}, "msg": {message}}]}
+{"{username_sender}": [{"msg_from": {name_sender}, "msg_to": {name_receiver}, "msg": {message}}]}
+```
 Jika gagal mendapatkan inbox, maka akan muncul pesan error.<br>
 
 #### Contoh Message Input dan Keluaran
@@ -128,15 +148,19 @@ User dapat melihat user yang sedang aktif pada server yang sama. User aktif adal
 
 #### Parameter Input
 Untuk melihat daftar user yang aktif, gunakan command <code>list</code>. Sebagai contoh adalah sebagai berikut :<br>
-<code>list</code><br>
+```
+list
+```
 Command : list<br>
 Parameter : (tidak ada)<br>
 Command tersebut kemudian dikirim ke server untuk diproses.<br><br>
 
 #### Hasil Keluaran, Penjelasan, Status Keluaran
 Jika berhasil, server kemudian membalas dengan daftar username yang sedang aktif berupa data json.
-<code>status : OK, messages : {json username data}
-{json data username}</code>
+```
+status : OK, messages : {json username data}
+{json data username}
+```
 Jika gagal mendapatkan daftar username, maka akan muncul pesan error.<br>
 
 #### Contoh Message Input dan Keluaran
@@ -144,6 +168,7 @@ client side<br>
 <img src="img/client_list.PNG" style="float: left;"/><br>
 server side<br>
 <img src="img/server_list.PNG" style="float: left;"/><br>
+
 
 ### Log out User
 Pre-conditions :
@@ -154,15 +179,19 @@ User dapat keluar dari ruang percakapan dengan menghapus session.
 
 #### Parameter Input
 Untuk keluar dari percakapan, gunakan command <code>logout</code>. Sebagai contoh adalah sebagai berikut :<br>
-<code>logout</code><br>
+```
+logout
+```
 Command : logout<br>
 Parameter : (tidak ada)
 Command tersebut kemudian diproses dan dikirim ke server dengan parameter session ID. Session ID tersebut kemudian dihapus dari server maupun client, sehingga user telah keluar dari percakapan.<br><br>
 
 #### Hasil Keluaran, Penjelasan, Status Keluaran
 Jika berhasil, server kemudian membalas dengan pesan bahwa user telah ter-log out.
-<code>status : OK, messages : Logged out
-“Logged out”</code>
+```
+status : OK, messages : Logged out
+“Logged out”
+```
 Jika gagal log out, maka akan muncul pesan error.<br>
 
 #### Contoh Message Input dan Keluaran
@@ -176,6 +205,7 @@ server side<br>
 sehingga list user menjadi<br>
 <img src="img/client_logout_list.PNG" style="float: left;"/><br>
 
+
 ### Keluar dari Program
 Pre-conditions : sudah log in<br><br>
 
@@ -184,15 +214,19 @@ User dapat log out dari percakapan sekaligus keluar dari program secara langsung
 
 #### Parameter Input
 Untuk keluar dari program, gunakan command <code>exit</code>. Sebagai contoh adalah sebagai berikut :<br>
-<code>exit</code><br>
+```
+exit
+```
 Command : exit<br>
 Parameter : (tidak ada)
 Command tersebut menjalankan fungsi logout, kemudian memutuskan hubungan socket dengan server. Kemudian user telah keluar dari program.<br>
 
 #### Hasil Keluaran, Penjelasan, Status Keluaran
 Jika berhasil maka muncul pesan<br>
-<code>status : OK, messages : Logged out
-Exit from program</code><br>
+```
+status : OK, messages : Logged out
+Exit from program
+```
 
 #### Contoh Message Input dan Keluaran
 <img src="img/client_exit.PNG" style="float: left;"/><br>
