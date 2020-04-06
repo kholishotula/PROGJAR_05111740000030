@@ -1,5 +1,8 @@
 # Tugas 5 PROGJAR C Kholishotul Amaliah 05111740000030
 
+## Nama Services
+Chatting protocol using multithread server
+
 ## Deskripsi program
 Program ini merupakan protokol chatting dengan menggunakan multithread server. Program ini terdiri atas chat.py, chat-cli.py, server_thread_chat.py. Chat.py merupakan model dasar dari implementasi protokol chat. Berisikan fungsi-fungsi dasar yang dilakukan saat chatting. Chat-cli.py merupakan implementasi program client yang menggunakan model yang disediakan di file chat.py dan bertugas untuk menyediakan user interface kepada pengguna berbasis command line interface. Server_thread_chat.py merupakan multithreaded server yang menggunakan chat.py sebagai modelnya.<br>
 
@@ -29,10 +32,13 @@ Command tersebut kemudian dikirim ke server untuk diproses.<br><br>
 
 #### Hasil Keluaran, Penjelasan, Status Keluaran
 Jika autentikasi berhasil, maka akan muncul pesan bahwa user sudah logged in dan token id-nya. Sebagai contoh adalah sebagai berikut :<br>
-<code>username {username} logged in, token {tokenid}</code><br>
+<code>status : OK, tokenid : {tokenID}<br>
+username {username} logged in, token {tokenid}</code><br>
 Jika autentikasi gagal, maka akan muncul pesan error dan alasan error-nya. Sebagai contoh adalah sebagai berikut :<br>
-<code>Error, User is not found</code><br>
-<code>Error, Wrong password</code><br>
+<code>status : ERROR, message : User is not found<br>
+Error, User is not found</code><br>
+<code> status : ERROR, message : Wrong password<br>
+Error, Wrong password</code><br>
 
 #### Contoh Message Input dan Keluaran
 Jika berhasil<br>
@@ -68,9 +74,11 @@ Command tersebut kemudian diproses dan dikirim ke server dengan parameter token 
 
 #### Hasil Keluaran, Penjelasan, Status Keluaran
 Jika pesan berhasil terkirim, maka akan muncul pesan bahwa pesan terkirim. Sebagai contoh adalah sebagai berikut :<br>
-<code>message sent to {username}</code><br>
+<code> status : OK, message : Message sent<br>
+message sent to {username}</code><br>
 Jika pesan gagal terkirim, maka akan muncul pesan error dan alasan error-nya. Sebagai contoh adalah sebagai berikut :<br>
-<code>Error, User is not found</code><br>
+<code> status : ERROR, message : User is not found<br>
+Error, User is not found</code><br>
 
 #### Contoh Message Input dan Keluaran
 Jika berhasil<br>
@@ -100,7 +108,9 @@ Command tersebut kemudian diproses dan dikirim ke server dengan parameter tokenI
 
 #### Hasil Keluaran, Penjelasan, Status Keluaran
 Jika terdapat pesan yang diterima dari orang lain, maka akan muncul pesan-pesannya. Sebagai contoh adalah sebagai berikut :<br>
-<code>{"{username_sender}": [{"msg_from": {name_sender}, "msg_to": {name_receiver}, "msg": {message}}]}</code><br>
+<code> status : OK, message : {json messages}<br>
+{"{username_sender}": [{"msg_from": {name_sender}, "msg_to": {name_receiver}, "msg": {message}}]}</code><br>
+Jika gagal mendapatkan inbox, maka akan muncul pesan error.<br>
 
 #### Contoh Message Input dan Keluaran
 client side<br>
@@ -124,7 +134,10 @@ Parameter : (tidak ada)<br>
 Command tersebut kemudian dikirim ke server untuk diproses.<br><br>
 
 #### Hasil Keluaran, Penjelasan, Status Keluaran
-Server kemudian membalas dengan daftar username yang sedang aktif berupa data json.
+Jika berhasil, server kemudian membalas dengan daftar username yang sedang aktif berupa data json.
+<code>status : OK, messages : {json username data}
+{json data username}</code>
+Jika gagal mendapatkan daftar username, maka akan muncul pesan error.<br>
 
 #### Contoh Message Input dan Keluaran
 client side<br>
@@ -147,7 +160,10 @@ Parameter : (tidak ada)
 Command tersebut kemudian diproses dan dikirim ke server dengan parameter session ID. Session ID tersebut kemudian dihapus dari server maupun client, sehingga user telah keluar dari percakapan.<br><br>
 
 #### Hasil Keluaran, Penjelasan, Status Keluaran
-Server kemudian membalas dengan pesan bahwa user telah ter-log out.
+Jika berhasil, server kemudian membalas dengan pesan bahwa user telah ter-log out.
+<code>status : OK, messages : Logged out
+“Logged out”</code>
+Jika gagal log out, maka akan muncul pesan error.<br>
 
 #### Contoh Message Input dan Keluaran
 sebelumnya, list user adalah sebagai berikut :<br>
@@ -161,7 +177,7 @@ sehingga list user menjadi<br>
 <img src="img/client_logout_list.PNG" style="float: left;"/><br>
 
 ### Keluar dari Program
-Pre-conditions : (tidak ada)<br><br>
+Pre-conditions : sudah log in<br><br>
 
 #### Deskripsi dan Tujuan
 User dapat log out dari percakapan sekaligus keluar dari program secara langsung. Selain itu, user juga dapat memutuskan hubungan socket dengan server.
@@ -174,7 +190,9 @@ Parameter : (tidak ada)
 Command tersebut menjalankan fungsi logout, kemudian memutuskan hubungan socket dengan server. Kemudian user telah keluar dari program.<br>
 
 #### Hasil Keluaran, Penjelasan, Status Keluaran
-Jika berhasil maka muncul pesan <code>Exit from program</code><br>
+Jika berhasil maka muncul pesan<br>
+<code>status : OK, messages : Logged out
+Exit from program</code><br>
 
 #### Contoh Message Input dan Keluaran
 <img src="img/client_exit.PNG" style="float: left;"/><br>
