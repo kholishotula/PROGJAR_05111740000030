@@ -20,6 +20,6 @@ dengan tanda akhir request adalah "\r\n\r\n"
 
 ## Hasil
 Ketika dijalankan pada Chrome browser, dengan mengakses "127.0.0.1:10001", maka muncul tampilan<br>
-<img src="Tugas6/ss_browser.PNG" style="float: left;"/><br><br>
+<img src="ss_browser.PNG" style="float: left;"/><br><br>
 Sedangkan berikut adalah tampilan pada server<br>
-<img src="Tugas6/ss_server.PNG" style="float: left;"/><br>
+<img src="ss_server.PNG" style="float: left;"/><br>
