@@ -62,7 +62,7 @@ Keluaran hasil performance test adalah sebagai berikut :<br>
 <td>0</td>
 <td>1160 bytes</td>
 <td>542.42 [#/sec] (mean)</td>
-<td>1.844 [ms] (mean)</td>
+<td>1.844 [ms] (mean, across all concurrent request)</td>
 <td>61.45 [Kbytes/sec]</td>
 </tr>
 <tr>
@@ -73,7 +73,7 @@ Keluaran hasil performance test adalah sebagai berikut :<br>
 <td>0</td>
 <td>1160 bytes</td>
 <td>268.52 [#/sec] (mean)</td>
-<td></td>
+<td>3.724 [ms] (mean, across all concurrent request)</td>
 <td>30.42 [Kbytes/sec]</td>
 </tr>
 <tr>
@@ -84,7 +84,7 @@ Keluaran hasil performance test adalah sebagai berikut :<br>
 <td>0</td>
 <td>1160 bytes</td>
 <td>403.60 [#/sec] (mean)</td>
-<td></td>
+<td>2.478 [ms] (mean, across all concurrent request)</td>
 <td>45.72 [Kbytes/sec]</td>
 </tr>
 <tr>
@@ -95,7 +95,7 @@ Keluaran hasil performance test adalah sebagai berikut :<br>
 <td>0</td>
 <td>5800 bytes</td>
 <td>112.43 [#/sec] (mean)</td>
-<td>8.894 [ms] (mean)</td>
+<td>8.894 [ms] (mean, across all concurrent request)</td>
 <td>12.74 [Kbytes/sec]</td>
 </tr>
 <tr>
@@ -106,7 +106,7 @@ Keluaran hasil performance test adalah sebagai berikut :<br>
 <td>0</td>
 <td>5800 bytes</td>
 <td>102.65 [#/sec] (mean)</td>
-<td></td>
+<td>9.742 [ms] (mean, across all concurrent request)</td>
 <td>11.63 [Kbytes/sec]</td>
 </tr>
 <tr>
@@ -117,7 +117,7 @@ Keluaran hasil performance test adalah sebagai berikut :<br>
 <td>0</td>
 <td>5800 bytes</td>
 <td>74.80 [#/sec] (mean)</td>
-<td></td>
+<td>13.370 [ms] (mean, across all concurrent request)</td>
 <td>8.47 [Kbytes/sec]</td>
 </tr>
 <tr>
@@ -128,7 +128,7 @@ Keluaran hasil performance test adalah sebagai berikut :<br>
 <td>0</td>
 <td>5800 bytes</td>
 <td>55.81 [#/sec] (mean)</td>
-<td></td>
+<td>17.916 [ms] (mean, across all concurrent request)</td>
 <td>6.32 [Kbytes/sec]</td>
 </tr>
 <tr>
@@ -139,7 +139,7 @@ Keluaran hasil performance test adalah sebagai berikut :<br>
 <td>0</td>
 <td>11600 bytes</td>
 <td>114.85 [#/sec] (mean)</td>
-<td>8.707 [ms] (mean)</td>
+<td>8.707 [ms] (mean, across all concurrent request)</td>
 <td>13.01 [Kbytes/sec]</td>
 </tr>
 <tr>
@@ -150,7 +150,7 @@ Keluaran hasil performance test adalah sebagai berikut :<br>
 <td>0</td>
 <td>11600 bytes</td>
 <td>74.53 [#/sec] (mean)</td>
-<td></td>
+<td>13.417 [ms] (mean, across all concurrent request)</td>
 <td>8.44 [Kbytes/sec]</td>
 </tr>
 <tr>
@@ -161,7 +161,7 @@ Keluaran hasil performance test adalah sebagai berikut :<br>
 <td>0</td>
 <td>11600 bytes</td>
 <td>38.16 [#/sec] (mean)</td>
-<td></td>
+<td>26.204 [ms] (mean, across all concurrent request)</td>
 <td>4.32 [Kbytes/sec]</td>
 </tr>
 <tr>
@@ -172,7 +172,7 @@ Keluaran hasil performance test adalah sebagai berikut :<br>
 <td>0</td>
 <td>11600 bytes</td>
 <td>28.34 [#/sec] (mean)</td>
-<td></td>
+<td>35.291 [ms] (mean, across all concurrent request)</td>
 <td>3.21 [Kbytes/sec]</td>
 </tr>
 </tbody>
