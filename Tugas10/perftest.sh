@@ -1,0 +1,12 @@
+#ab -n 1000 -c 1 http://localhost:44444/page.html > async_1.txt
+#ab -n 1000 -c 50 http://localhost:44444/page.html > async_2.txt
+#ab -n 1000 -c 100 http://localhost:44444/page.html > async_3.txt
+#ab -n 1000 -c 200 http://localhost:44444/page.html > async_4.txt
+#ab -n 1000 -c 500 http://localhost:44444/page.html > async_5.txt
+#ab -n 1000 -c 1000 http://localhost:44444/page.html > async_6.txt
+ab -n 1000 -c 1 http://localhost:46000/page.html > thread_1.txt
+ab -n 1000 -c 50 http://localhost:46000/page.html > thread_2.txt
+ab -n 1000 -c 100 http://localhost:46000/page.html > thread_3.txt
+ab -n 1000 -c 200 http://localhost:46000/page.html > thread_4.txt
+ab -n 1000 -c 500 http://localhost:46000/page.html > thread_5.txt
+ab -n 1000 -c 1000 http://localhost:46000/page.html > thread_6.txt
